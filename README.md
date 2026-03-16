@@ -1,4 +1,4 @@
--- Creadas cada una de las CTEs WHERE event_name es el indicado para cada paso del funnel
+--Creadas cada una de las CTEs WHERE event_name es el indicado para cada paso del funnel
     
 WITH first_visits AS (
     SELECT DISTINCT user_id, country
@@ -16,7 +16,7 @@ WITH first_visits AS (
 ),
     
     add_to_cart AS (
-   SELECT DISTINCT user_id, country
+    SELECT DISTINCT user_id, country
     FROM mercadolibre_funnel
     WHERE event_name = 'add_to_cart'
         AND event_date BETWEEN '2025-01-01' AND '2025-08-31'
